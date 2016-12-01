@@ -1,0 +1,24 @@
+package sensors;
+
+import lejos.hardware.sensor.*;
+import lejos.hardware.port.SensorPort;
+import lejos.hardware.port.UARTPort;
+
+public class Vari {
+	
+	private SensorPort AnturiPortti;
+	private EV3ColorSensor vAnturi;
+
+	public void VariAnturi(SensorPort AnturiPortti) {
+		this.vAnturi = new EV3ColorSensor((UARTPort) AnturiPortti);
+	}
+
+	public int getVari() {
+		return vAnturi.getColorID();
+	}
+	
+	public void suljeVari() {
+		vAnturi.close();
+	}
+	
+}
